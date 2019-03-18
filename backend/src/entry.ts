@@ -1,5 +1,9 @@
-import server from './server';
+import { ServerBoot } from './decorators/server-boot-decorator';
+import { ExampleController } from './controllers/example-controller';
 
-server.listen(3000, () => {
-    console.log('[SERVER] Running at http://localhost:3000');
-});
+@ServerBoot
+export class Entry {
+    public static controllers: Array<any> = [
+        new ExampleController()
+    ];
+}

@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon --watch \"src/\" --exec \"ts-node src/entry.ts\" -e ts",
+        "start": "nodemon --watch src/**/* --exec ts-node src/entry.ts -e ts",
+        "debug": "nodemon --watch src/**/* -e ts,json --exec node --inspect-brk -r ts-node/register src/entry.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
