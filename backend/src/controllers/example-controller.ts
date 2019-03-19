@@ -5,11 +5,11 @@ import { Controller, HttpGet, HttpPost, HttpPut, HttpDelete } from '../decorator
 export class ExampleController {
     @HttpGet()
     public get(req: Request, res: Response) {
-        res.send('Hello from server.home')
+        res.jsonp({ message: 'Hello from Get Method' });
     }
 
     @HttpPost()
     public post(req: Request, res: Response) {
-        res.send('Server post method!')
+        res.jsonp({ message: 'Hello from Post Method' });
     }
 }
